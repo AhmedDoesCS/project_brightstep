@@ -8,4 +8,11 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      "/sessions": "http://localhost:3001",
+      "/prompts": "http://localhost:3001",
+      "/responses": "http://localhost:3001",
+    },
+  },
 })
