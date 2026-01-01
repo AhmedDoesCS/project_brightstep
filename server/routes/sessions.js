@@ -20,14 +20,31 @@ router.post("/start", async (req, res) => {
     }
 });
 
-// router.post("/:id/end", async (req, res) => {
-//     try {
+router.post("/:id/end", async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        if (Number.isNaN(Number(id))) {
+            return res.status(400).json({ error: "Session id must be a number" });
+        }
+
+        const [result] = await db.execute(
+            "UPDATE sessions SET ended_at = NOW() WHERE id = ? AND ended_at IS NULL",
+            [id]
+        );
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: "Session not found or already ended" });
+        }
+
+        return res.json({ session_id: Number(id), ended: true });
 
 
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ error: "Failed to end session" });
-//     }
-// });
+
+    } catch (err) {
+        console.error(err);
+    return res.status(500).json({ error: "Failed to end session" });
+    }
+});
 
 export default router;
