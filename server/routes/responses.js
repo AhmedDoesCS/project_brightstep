@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/", async (req, res) => {
     try {
         const { sessionId, promptId, responseText } = req.body;
-        if (!session_id || !prompt_id || typeof response_text !== "string") {
+        if (!sessionId || !promptId || typeof responseText !== "string") {
             return res.status(400).json({ error: "session_id, prompt_id, and response_text are required" });
         }
 

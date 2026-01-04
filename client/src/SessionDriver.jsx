@@ -52,7 +52,7 @@ function SessionDriver() {
             setSessionId(data.session_id);
             setIndex(0);
             setResponseText("");
-            setUi(UI.ANSWERING);  
+            setUi(UI.ANSWERING);
         } catch (e) {
             setError(e?.message || "Unknown error");
             setUi(UI.ERROR);
@@ -69,9 +69,9 @@ function SessionDriver() {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    session_id: sessionId,
-                    prompt_id: prompt.id,
-                    response_text: responseText.trim(),
+                    sessionId: sessionId,
+                    promptId: prompt.id,
+                    responseText: responseText.trim(),
                 }),
             });
 
@@ -149,7 +149,7 @@ function SessionDriver() {
                             onChange={setResponseText}
                             onSubmit={() => { }}
                             disabled={true}
-                            buttonLabel="Submitting…"
+                            buttonLabel="Saving…"
                         />
                     </>
                 )}
