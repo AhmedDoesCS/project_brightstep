@@ -6,7 +6,7 @@ This project is inspired by the needs of neurodivergent learners and aims to pro
 
 ---
 
-## 🎯 Project Purpose
+## Project Purpose
 
 Many educational tools focus on isolated skills or abstract exercises. This project takes a different approach:
 
@@ -18,7 +18,7 @@ The initial implementation focuses on practicing **“WHY” questions**, helpin
 
 ---
 
-## 🧠 Skills Supported (Current & Planned)
+## Skills Supported (Current & Planned)
 
 **Current**
 - Answering basic “Why” questions
@@ -34,7 +34,7 @@ The system is designed to scale to new skills and activities without restructuri
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 - **Client**: Frontend UI (framework-agnostic by design)
 - **Server**: Node.js + Express backend
@@ -43,7 +43,7 @@ The system is designed to scale to new skills and activities without restructuri
 
 ---
 
-## 🗄️ Database Design Philosophy
+## Database Design Philosophy
 
 The database is structured around:
 - **Users** → who is practicing
@@ -60,7 +60,16 @@ This ensures:
 
 ---
 
-## ⚠️ AI Assistance Disclosure
+## What I learned
+
+Managing controlled inputs in React
+
+- Designing UI state machines
+- Handling backend validation and error states
+- Debugging SQL foreign key constraints
+- Building a full request lifecycle
+
+## AI Assistance Disclosure
 
 > **Note:**  
 > This README was generated with the assistance of AI.
@@ -78,10 +87,10 @@ AI is used as a **development aid**, not a replacement for understanding or owne
 
 ## 📌 Project Status
 
-🚧 Early-stage development  
+Early-stage development  
 
 ---
 
-## 📜 License
+## License
 
 MIT License
