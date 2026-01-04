@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
             return res.status(400).json({ error: "session_id, prompt_id, and response_text are required" });
         }
 
-        const responded = responseText.trim() > 0;
+        const responded = responseText.trim().length > 0;
 
 
         const [result] = await db.execute(
